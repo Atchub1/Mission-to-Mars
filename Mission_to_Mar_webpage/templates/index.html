@@ -1,0 +1,111 @@
+<!-- Create a template HTML file called index.html
+that will take the mars data dictionary and display all of the data
+in the appropriate HTML elements -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename ='styles.css')}}"/>
+
+</head>
+
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+
+    <!-- Lattest News  -->
+    <div class="row" id="News">
+      <div class="col-md-12">
+        <h3>Latest Mars News</h3>
+        <h4>{{mars_web.latest_news_title}}</h4>
+        <p>{{mars_web.latest_news_description}}</p>
+      </div>
+    </div>
+
+    <!-- Featured Image -->
+    <div class = 'row main'>
+      <div class = 'col-md-9'>
+        <h4>Featured Mars Image</h4>
+        <img class = ' col-md-9' src = {{mars_web.featured_image_url}} 
+        alt = "image of Jet Propulsion Laboratory's featured image"/>
+      </div>
+    
+     <!-- current weather and Mars Facts -->
+      <div class = 'col-md-3' id = 'fast_facts'>
+        <div class = 'weather'>
+          <h5>Current Weather on Mars</h5>
+          <p>{{mars_web.mars_weather}}</p>
+        </div>
+        <div class = 'facts'>
+          <h5>Mars Facts</h5>
+          {{mars_web.mars_html_table| safe}}
+          
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Hemispheres  -->
+    <div class = 'row' id = 'Hemisphere_header'>
+      <div class  = 'col-md-12'>
+        <h4>Mars Hemispheres</h4>
+        <hr>
+      </div>
+    </div>
+
+
+    <div id = 'hemispheres'>
+    
+    <div class = 'row'>
+      {% for mars in mars_web.mars_hem_dict[0:2] %}
+        <div class="card-deck">
+
+          <div class = 'col-md-6'>
+            <div class="card">
+              <img class="card-img-top" src= {{mars.img_url}} alt="image of a Mars Hemisphere">
+              <div class="card-body">
+                <h5 class="card-title">{{mars.title}}</h5>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      {% endfor %}
+    </div>
+
+    
+    <div class = 'row'>
+      {% for mars in mars_web.mars_hem_dict[2:4] %}
+        <div class="card-deck">
+
+          <div class="card  col-md-6">
+            <img class="card-img-top" src= {{mars.img_url}} alt="image of a Mars Hemisphere">
+            <div class="card-body">
+              <h5 class="card-title">{{mars.title}}</h5>
+            </div>
+          </div>
+
+        </div>
+      {% endfor %}
+  </div>
+
+  </div>
+      
+
+  </div>
+</body>
+
+</html>
