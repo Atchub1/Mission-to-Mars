@@ -1,5 +1,8 @@
   
-  #create function to scrape multiple websites and return one result, a python dictionary of scraping reulsts     
+# Create a function to scrape multiple websites and return one result, a python dictionary of scraping reulsts 
+# function was created in jupyter notebook and exported as a python file
+
+
 def scrape():    
     
     #!/usr/bin/env python
