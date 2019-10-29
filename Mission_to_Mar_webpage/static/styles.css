@@ -42,11 +42,20 @@ h5 {
     padding-top: 20px;
 }
 
+/* .mars-hem-row-1 {
+    padding: 20px 10px;
+} */
+
+/* .mars-hem-row-2 {
+    padding: 10px 20px;
+} */
+
+
 table {
     table-layout: auto;
     border-collapse: collapse;
     width: 100%;
-    font-size: 12px
+    font-size: 12px;
 }
 
 body {
