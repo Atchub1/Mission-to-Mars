@@ -39,11 +39,11 @@ in the appropriate HTML elements -->
     <div class = 'row main'>
       <div class = 'col-md-9'>
         <h4>Featured Mars Image</h4>
-        <img class = ' col-md-9' src = {{mars_web.featured_image_url}} 
+        <img class = 'col-md-9' src = {{mars_web.featured_image_url}} 
         alt = "image of Jet Propulsion Laboratory's featured image"/>
       </div>
     
-     <!-- current weather and Mars Facts -->
+     <!-- Current weather and Mars Facts -->
       <div class = 'col-md-3' id = 'fast_facts'>
         <div class = 'weather'>
           <h5>Current Weather on Mars</h5>
@@ -91,7 +91,7 @@ in the appropriate HTML elements -->
       {% for mars in mars_web.mars_hem_dict[2:4] %}
         <div class="card-deck">
 
-          <div class="card  col-md-6">
+          <div class="card col-md-6">
             <img class="card-img-top" src= {{mars.img_url}} alt="image of a Mars Hemisphere">
             <div class="card-body">
               <h5 class="card-title">{{mars.title}}</h5>
