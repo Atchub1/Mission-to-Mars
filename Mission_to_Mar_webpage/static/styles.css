@@ -1,6 +1,7 @@
 
 #fast_facts {
     padding:10px;
+    margin-top: 58px;
 }
 
 .weather {
@@ -10,6 +11,7 @@
     overflow: hidden;
 
 }
+
 
 .main {
     padding-top: 40px;
